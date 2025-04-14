@@ -1,4 +1,4 @@
-# Bouncing Box with Brython
+# Py Bouncing Box
 
 ### Learn Python-Based Web Development: Create an Interactive Bouncing Box Game
 
