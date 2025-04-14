@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Py Bouncing Box</title>
+    <!-- Include Brython -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.10.7/brython.min.js"></script>
+    <style>
+        #box {
+            width: 70px;
+            height: 70px;
+            background-color: teal;
+            font-size: 300%;
+            text-align: center;
+            user-select: none;
+            display: block;
+            position: absolute;
+            top: 100px;
+            /* Change me! */
+            left: 0px;
+        }
+        #board {
+            height: 100vh;
+            width: 100%;
+        }
+    </style>
+</head>
+<body id="board" onload="brython()">
+    <!-- HTML for the box -->
+    <div id="box">?</div>
+    
+    <!-- Python code using Brython -->
+    <script type="text/python">
+        from browser import document, window
+        
+        #################################################################
+        #################### SETUP DO NOT DELETE ########################
+        #################################################################
+        
+        # Get the box and board elements
+        box = document["box"]
+        board = document["board"]
+        
+        # Function to move the box to a specific x position
+        def move_box_to(x_position):
+            box.style.left = f"{x_position}px"
+            
+        # Function to change the text in the box
+        def change_box_text(text):
+            box.textContent = str(text)
+        
+        #################################################################
+        #################### YOUR CODE BELOW HERE ######################
+        #################################################################
+        
+        # TODO 2 - Variable declarations below here
+        
+        
+        
+        # This function will be called 20 times/second. Each time it is called,
+        # it should move the Box to a new location. If the box drifts off the screen
+        # turn it around!
+        def update_position():
+            # TODO 2 - Update positionX by adding speed
+            pass
+            
+            # TODO 6 - Bounce off right edge of screen
+            
+            
+            # TODO 7 - Bounce off left edge of screen
+            
+            
+            # TODO 2 - Call the move_box_to function
+            
+            
+            # Schedule the next update
+            window.setTimeout(update_position, 50)
+        
+        # This Function will be called each time the box is clicked. Each time it is called,
+        # it should increase the points total, increase the speed, and move the box to
+        # the left side of the screen.
+        def on_box_click(event):
+            # TODO 3 - Reset positionX to 0
+            pass
+            
+            # TODO 4 - Increase points by 1
+            
+            
+            # TODO 5 - Increase speed
+            
+            
+            # TODO 8 - Fix the speed bug with a linear formula
+            
+            
+            # TODO 3 - Call the change_box_text function
+            
+            
+        
+        # Set up the click handler
+        box.bind("click", on_box_click)
+        
+        # Start the animation
+        update_position()
+    </script>
+</body>
+</html>
